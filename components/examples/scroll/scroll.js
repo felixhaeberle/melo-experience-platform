@@ -1,9 +1,10 @@
-import ClientOnly from '../../../components/ClientOnly'
-import Layout from '../../../components/Layout'
-import styles from './styles.module.css'
+import styles from '../../../styles/scroll.module.css'
+import {useState} from 'react'
 
 export default function Scroll() {
-  if (typeof window !== "undefined"){
+  let [experience, experienceStarted] = useState(false);
+
+  const startSound = () => {
     // sounds and collection are example results from tool frontend
     // machine generated lines of code based on user input
     const sounds = {
@@ -133,23 +134,20 @@ export default function Scroll() {
   }
 
   return ( 
-    <Layout>
-      <ClientOnly>
-        <div id={styles.wrapper}>
-          <div data-sound="name01">
-              <a className={styles.buttonContent} href="#"><span>Hover in</span>In</a>
-          </div>
-          <div data-sound="name02">
-              <a className={styles.buttonContent} href="#"><span>Hover out</span></a>
-          </div>
-          <div data-sound="name03">
-              <a className={styles.buttonContent} href="#"><span>Click</span></a>
-          </div>
-          <div data-sound="name04">
-              <a className={styles.buttonContent} href="#"><span>Nearby</span></a>
-          </div>
-        </div>
-      </ClientOnly>
-    </Layout>
+    <div id={styles.wrapper}>
+      <div className={styles.buttonContentRed} onClick={() => {startSound(); experienceStarted(true);}}>{experience ? 'Experience started' : 'Click to start experience'}</div>
+      <div data-sound="name01">
+        <span className={styles.buttonContent}><span>Hover in</span></span>
+      </div>
+      <div data-sound="name02">
+        <span className={styles.buttonContent}><span>Hover out</span></span>
+      </div>
+      <div data-sound="name03">
+        <span className={styles.buttonContent}><span>Click</span></span>
+      </div>
+      <div data-sound="name04">
+        <span className={styles.buttonContent}><span>Nearby</span></span>
+      </div>
+    </div>
   )
 }

@@ -1,32 +1,16 @@
-import React, {Component} from 'react'
-
+import DragPage from './examples/drag/index'
 import Head from 'next/head'
+import React from 'react'
+import ScrollPage from './examples/scroll/index'
 import Toolbar from './Toolbar'
-import { experiences } from '../examples'
+import { experiences } from './examples/examples'
 import styles from '../styles/Home.module.css'
-
-class Layout extends Component {
+class Layout extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {
-      currentIndex: 0,
-    }
-    this.handleClick = this.handleClick.bind(this)
-  }
-
-  handleClick = (key) => {  
-    if(this.state.currentIndex > experiences.length) {
-      this.setState({currentIndex: 0})
-    }
-
-    if(key = 'prev'){
-      this.setState({currentIndex: this.state.currentIndex -1})
-    } else if('next'){
-      this.setState({currentIndex: this.state.currentIndex +1})
-    }
+    super(props)
   }
   
-  render() {
+  render() {    
     return (
       <div className={styles.container}>
         <Head>
@@ -38,12 +22,9 @@ class Layout extends Component {
         </Head>
   
         <main className={styles.main}>
-          <Toolbar
-            experiences={experiences} 
-            experience={experiences[this.state.currentIndex]} 
-            currentIndex={this.state.currentIndex}
-            handleClick={this.handleClick} />
-            { this.props.children }
+            <Toolbar />
+            <DragPage />
+            <ScrollPage />
         </main>
       </div>
     )
