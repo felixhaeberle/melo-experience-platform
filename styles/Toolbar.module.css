@@ -1,0 +1,62 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background-color: var(--dark-gray);
+  height: 60px;
+  width: 100%;
+  padding: 20px; 
+}
+
+.toolbarTitle {
+  font-family: 'IBM Plex Sans';
+  font-weight: 500;
+  color: var(--light-white);
+}
+
+.toolbarActiveExperienceTitle {
+  font-family: 'IBM Plex Mono';
+  font-weight: 500;
+  color: var(--light-white);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); 
+}
+
+.toolbarNavigation {
+  display: flex;
+  flex-direction: row;
+}
+
+.toolbarNavigationPrev,
+.toolbarNavigationNext {
+  background-color: var(--light-gray);
+  width: 27px;
+  height: 27px;
+  background-image: url(../public/arrow.svg);
+  background-size: 18px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.toolbarNavigationPrev:hover,
+.toolbarNavigationNext:hover {
+  cursor: pointer;
+}
+
+
+
+.toolbarNavigationNext {
+  margin-left: 5px;
+}
+
+.toolbarLeash {
+  background-image: url(../public/leash.svg);
+  height: 14px;
+  width: 49px;
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%); 
+}
