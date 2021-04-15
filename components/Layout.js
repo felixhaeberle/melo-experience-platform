@@ -3,7 +3,6 @@ import Head from 'next/head'
 import React from 'react'
 import ScrollPage from './examples/scroll/index'
 import Toolbar from './Toolbar'
-import { experiences } from './examples/examples'
 import styles from '../styles/Home.module.css'
 class Layout extends React.Component {
   constructor(props) {

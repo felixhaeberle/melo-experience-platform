@@ -1,5 +1,5 @@
 import styles from '../../../styles/scroll.module.css'
-import {useState} from 'react'
+import { useState } from 'react'
 
 export default function Scroll() {
   let [experience, experienceStarted] = useState(false);
