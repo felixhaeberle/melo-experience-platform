@@ -1,9 +1,10 @@
 import DragPage from './examples/drag/index'
 import Head from 'next/head'
 import React from 'react'
-import ScrollPage from './examples/scroll/index'
+import MousePage from './examples/mouse/index'
 import Toolbar from './Toolbar'
 import styles from '../styles/Home.module.css'
+import ScrollPage from './examples/scroll/index'
 class Layout extends React.Component {
   constructor(props) {
     super(props)
@@ -23,6 +24,7 @@ class Layout extends React.Component {
         <main className={styles.main}>
             <Toolbar />
             <DragPage />
+            <MousePage />
             <ScrollPage />
         </main>
       </div>
