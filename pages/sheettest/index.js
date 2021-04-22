@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import { getEmojiList } from '../../lib/api';
+import { getMeloList } from '../../lib/api';
 
-export default function IndexPage({ emojis }) {
+export default function IndexPage({ interactions }) {
 
   return (
     <>
@@ -10,18 +10,17 @@ export default function IndexPage({ emojis }) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
       </Head>
       <div>
-        {emojis.map(emoji=><li>{emoji.elem}</li>)}
+        {interactions.map(interaction=><li>{interaction.name}</li>)}
       </div>
     </>
   );
 }
 
 export async function getStaticProps() {
-  const emojis = await getEmojiList();
-  console.log(emojis.slice(1, emojis.length))
+  const interactions = await getMeloList();
   return {
     props: {
-      emojis: emojis.slice(1, emojis.length), // remove sheet header
+      interactions: interactions.slice(1, interactions.length), // remove sheet header
     },
     revalidate: 1, // In seconds
   };
