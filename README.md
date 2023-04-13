@@ -1,3 +1,6 @@
+![melo-logo](https://user-images.githubusercontent.com/58360188/231847427-ec35048f-2df4-43a2-9778-c072931c2c1b.jpg)
+
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/69a7ecb5-4c56-4c29-aeca-cc186726bd8b/deploy-status)](https://app.netlify.com/sites/melo-experience-platform/deploys)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
